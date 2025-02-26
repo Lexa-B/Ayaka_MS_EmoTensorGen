@@ -30,6 +30,18 @@ It is a very sparse tensor, with the majority of the values at any given point b
     - [a. The Format's Structure](#6a-the-format-structure)
     - [b. The Format's Generation](#6b-the-format-generation)
 
+## 2. The Service Basics<a name="2-the-service-basics"></a>
+### The Service's Overview<a name="2a-the-service-overview"></a>
+<span style="color:red">Currently, I have an early-stage, yet working, implementation of the code... but it currently has many hard-coded values, and as such contains personally-identifying information. I will be refactoring the code to remove those hard-coded values, and to also add the necessary documentation so that others can use it. Please check back soon for updates!</span>
+
+### The Service's Core Functionalities<a name="2b-the-service-core-functionalities"></a>
+
+### The Service's API Endpoints<a name="2c-the-service-api-endpoints"></a>
+
+### The Service's Error Handling<a name="2d-the-service-error-handling"></a>
+
+### The Service's Performance Optimization<a name="2e-the-service-performance-optimization"></a>
+
 ## 5. The Tensor<a name="5-the-tensor"></a>
 ### The Tensor's Structure<a name="5a-the-tensor-structure"></a>
 The tensor is a 5D tensor, with the following dimensions:
