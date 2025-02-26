@@ -6,6 +6,7 @@ if [ "$choice" = "y" ]; then
   read -p "Create new virtual environment - Continue (y/n)?" choice
   if [ "$choice" = "y" ]; then
     echo "BUILDING...";
+    python3.12 -m venv ./VenvLx
   fi
 fi
 
