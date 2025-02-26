@@ -46,7 +46,7 @@ __3. The Direction Dimension__
 __2. The Emotion Dimension__
   This dimension represents the specific emotion family (currently using the Plutchik's Wheel of Emotions model, e.g. joy, trust, sadness, etc., although this can be changed later after further research) that the emotional state is directed towards.
 
-__1. The Emotional State Dimension__
+__1. The Emotion's State Dimension__
   This dimension represents the intensity, valence, and arousal of the given emotion family, that is, the strength of the emotion, how much it is positive or negative, and how elivated it's activation-level is (normally this would be a physiological arousal).
 
 ### The Tensor's Context<a name="5b-the-tensor-context"></a>
