@@ -32,7 +32,7 @@ It is a very sparse tensor, with the majority of the values at any given point b
 
 ## 2. The Service Basics<a name="2-the-service-basics"></a>
 ### The Service's Overview<a name="2a-the-service-overview"></a>
-<span style="color:red">Currently, I have an early-stage, yet working, implementation of the code... but it currently has many hard-coded values, and as such contains personally-identifying information. I will be refactoring the code to remove those hard-coded values, and to also add the necessary documentation so that others can use it. Please check back soon for updates!</span>
+<span style="color:red">I have an early-stage, yet working, implementation of the code... but it currently has many hard-coded values, and as such contains personally-identifying information. I will be refactoring the code to remove those hard-coded values, and to also add the necessary documentation so that others can use it. Please check back soon for updates!</span>
 
 ### The Service's Core Functionalities<a name="2b-the-service-core-functionalities"></a>
 
