@@ -1,0 +1,20 @@
+# Python
+*.pyc
+__pycache__/
+*.env
+VenvLx/
+
+# Logs
+*.log
+DLog*.zip
+DLog.*zip
+DLog.*.log.zip
+DLogging/*
+
+# Docker
+*.dockerignore
+
+.ruff_cache/
+
+Temp/
+temp/

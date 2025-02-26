@@ -1,0 +1,299 @@
+{
+    "$schema": "./_Schemas/EmoTensor.ModelConfig.schema.json",
+    "NetLocations": {
+        /* チャット – both on the same server for now */
+        "llm_chat_base_url": "http://127.0.0.1:41443/v1",
+
+        /* インストラクション – ToDo: move to a different server */
+        "llm_instruct_base_url": "http://127.0.0.1:41443/v1",
+
+        /* 推論 – ToDo: move to a different server */
+        "llm_reasoning_base_url": "http://127.0.0.1:41443/v1",
+
+        /* 深い文脈 – ToDo: move to a different server */
+        "llm_deep_context_base_url": "http://127.0.0.1:41443/v1",
+
+        /* 日本語 – both on the same server for now */
+        "embedder_base_url_jp": "http://127.0.0.1:42443/v1",
+
+        /* 英語 – ToDo: move to a different server */
+        "embedder_base_url_eng": "http://127.0.0.1:42443/v1",
+
+        /* スクラッチパッド – ToDo: move to a different server */
+        "llm_scratchpad_base_url": "http://127.0.0.1:41443/v1",
+        
+        /* スクラッチ概要 – ToDo: move to a different server */
+        "llm_scratch_synopsis_base_url": "http://127.0.0.1:41443/v1",
+        
+        /* 感情値 – ToDo: move to a different server */
+        "llm_emo_values_base_url": "http://127.0.0.1:41443/v1",
+        
+        /* 感情値フォールバック – ToDo: move to a different server */
+        "llm_emo_values_fallback_base_url": "http://127.0.0.1:41443/v1",
+        
+        /* 感情コンテキスト – ToDo: move to a different server */
+        "llm_emo_context_base_url": "http://127.0.0.1:41443/v1"
+    },
+    "LLM_Models": {
+        //"llm_model": "ayaka-llm-jp-chat-v0",
+        //"llm_model": "google-gemma-2-9b-it",
+        //"llm_model": "meta-llama-llama-3-1-8b-instruct",
+
+        /* チャットモデル – LLM model for chat (user-facing interaction) */
+        "llm_chat_model": "ayaka-llm-jp-chat-v0",
+
+        /* インストラクションモデル – LLM model for instruction (internal use, focused on instruction following) */
+        "llm_instruct_model": "gpt-4o-mini", //Cheapest, but lower quality
+        //"llm_instruct_model": "meta-llama-llama-3-1-8b-instruct", //Higher quality, but more expensive
+
+        /* 推論モデル – LLM model for complex reasoning tasks */
+        "llm_reasoning_model": "o1-mini",
+
+        /* 深い文脈モデル – LLM model for processing extensive context */
+        "llm_deep_context_model": "meta-llama-llama-3-1-8b-instruct",
+
+        /* スクラッチパッドモデル – LLM model for scratch pad operations */
+        "llm_scratchpad_model": "gpt-4o",
+
+        /* スクラッチ概要モデル – LLM model for scratch synopsis generation */
+        "llm_scratch_synopsis_model": "gpt-4o-mini",
+
+        /* 感情値モデル – LLM model for emotional value processing */
+        "llm_emo_values_model": "gpt-4o-mini",
+
+        /* 感情値フォールバックモデル – Fallback LLM model for emotional values */
+        "llm_emo_values_fallback_model": "gpt-4o-mini",
+
+        /* 感情コンテキストモデル – LLM model for emotional context processing */
+        "llm_emo_context_model": "gpt-4o"
+    },
+    "Embedder_Models": {
+        //"embedder_model": "alibaba_nlp_gte_qwen2_1_5b_instruct",
+        //"embedder_model": "jinaai_jina_embeddings_v3",
+
+        /* 日本語 – Embedding model for Japanese (large-scale, high-quality) */
+        "embedder_model_jp": "cl_nagoya_ruri_large",
+
+        /* 英語 – Embedding model for English (large-scale, high-quality) */
+        "embedder_model_eng": "mixedbread_ai_mxbai_embed_large_v1"
+    },
+    "Model_Functions": {
+        /* チャットモデル – Chat model function */
+        "llm_chat": "ChatAyaka",
+
+        /* インストラクションモデル – Instruction model function */
+        "llm_instruct": "ChatOpenAI",
+
+        /* 推論モデル – Reasoning model function */
+        "llm_reasoning": "ChatOpenAI",
+
+        /* 深い文脈モデル – Deep context model function */
+        "llm_deep_context": "ChatNVIDIA",
+
+        /* 日本語 – Embedding model for Japanese */
+        "embedder_jp": "NVIDIAEmbeddings",
+
+        /* 英語 – Embedding model for English */
+        "embedder_eng": "NVIDIAEmbeddings",
+
+        /* スクラッチパッド – Scratchpad model function */
+        "llm_scratchpad": "ChatOpenAI",
+
+        /* スクラッチ概要 – Scratch synopsis model function */
+        "llm_scratch_synopsis": "ChatOpenAI",
+
+        /* 感情値 – Emotional values model function */
+        "llm_emo_values": "ChatOpenAI",
+
+        /* 感情値フォールバック – Emotional values fallback model function */
+        "llm_emo_values_fallback": "ChatOpenAI",
+
+        /* 感情コンテキスト – Emotional context model function */
+        "llm_emo_context": "ChatOpenAI"
+    },
+    "LLM_Generation_Hyperparameters": {
+        /* チャットモデル – Beam mode */
+        "llm_chat_beam_mode": false,
+
+        /* インストラクションモデル – Beam mode */
+        "llm_instruct_beam_mode": false,
+
+        /* 推論モデル – Beam mode */
+        "llm_reasoning_beam_mode": false,
+
+        /* 深い文脈モデル – Beam mode */
+        "llm_deep_context_beam_mode": false,
+
+        /* チャットモデル – Beam size */
+        "llm_chat_beam_size": false,
+
+        /* インストラクションモデル – Beam size */
+        "llm_instruct_beam_size": false,
+
+        /* 推論モデル – Beam size */
+        "llm_reasoning_beam_size": false,
+
+        /* 深い文脈モデル – Beam size */
+        "llm_deep_context_beam_size": false,
+
+        /* チャットモデル – Temperature */
+        "llm_chat_temperature": 0.7,
+
+        /* インストラクションモデル – Temperature */
+        "llm_instruct_temperature": 0.0,
+
+        /* 推論モデル – Temperature */
+        "llm_reasoning_temperature": 1.0,
+
+        /* 深い文脈モデル – Temperature */
+        "llm_deep_context_temperature": 0.3,
+
+        /* チャットモデル – Top P */
+        "llm_chat_top_p": 0.95,
+
+        /* インストラクションモデル – Top P */
+        "llm_instruct_top_p": 0.95,
+
+        /* 推論モデル – Top P */
+        "llm_reasoning_top_p": null,
+
+        /* 深い文脈モデル – Top P */
+        "llm_deep_context_top_p": 0.90,
+
+        /* チャットモデル – Top K */
+        "llm_chat_top_k": 0,
+
+        /* インストラクションモデル – Top K */
+        "llm_instruct_top_k": 0,
+
+        /* 推論モデル – Top K */
+        "llm_reasoning_top_k": 0,
+
+        /* 深い文脈モデル – Top K */
+        "llm_deep_context_top_k": 40,
+
+        /* チャットモデル – Repetition penalty */
+        "llm_chat_repetition_penalty": 0.0,
+
+        /* インストラクションモデル – Repetition penalty */
+        "llm_instruct_repetition_penalty": 0.0,
+
+        /* 推論モデル – Repetition penalty */
+        "llm_reasoning_repetition_penalty": 1.1,
+
+        /* 深い文脈モデル – Repetition penalty */
+        "llm_deep_context_repetition_penalty": 1.1,
+
+        /* チャットモデル – Max tokens */
+        "llm_chat_max_tokens": 4000,
+
+        /* インストラクションモデル – Max tokens */
+        "llm_instruct_max_tokens": 4000,
+
+        /* 推論モデル – Max tokens */
+        "llm_reasoning_max_tokens": 8000,
+
+        /* 深い文脈モデル – Max tokens */
+        "llm_deep_context_max_tokens": 16000,
+
+        /* チャットモデル – Stop sequences */
+        "llm_chat_stop_sequences": [],
+
+        /* インストラクションモデル – Stop sequences */
+        "llm_instruct_stop_sequences": [],
+
+        /* 推論モデル – Stop sequences */
+        "llm_reasoning_stop_sequences": [],
+
+        /* 深い文脈モデル – Stop sequences */
+        "llm_deep_context_stop_sequences": [],
+
+        /* スクラッチパッドモデル – Beam mode */
+        "llm_scratchpad_beam_mode": false,
+        /* スクラッチ概要モデル – Beam mode */
+        "llm_scratch_synopsis_beam_mode": false,
+        /* 感情値モデル – Beam mode */
+        "llm_emo_values_beam_mode": false,
+        /* 感情値フォールバックモデル – Beam mode */
+        "llm_emo_values_fallback_beam_mode": false,
+        /* 感情コンテキストモデル – Beam mode */
+        "llm_emo_context_beam_mode": false,
+
+        /* スクラッチパッドモデル – Beam size */
+        "llm_scratchpad_beam_size": false,
+        /* スクラッチ概要モデル – Beam size */
+        "llm_scratch_synopsis_beam_size": false,
+        /* 感情値モデル – Beam size */
+        "llm_emo_values_beam_size": false,
+        /* 感情値フォールバックモデル – Beam size */
+        "llm_emo_values_fallback_beam_size": false,
+        /* 感情コンテキストモデル – Beam size */
+        "llm_emo_context_beam_size": false,
+
+        /* スクラッチパッドモデル – Temperature */
+        "llm_scratchpad_temperature": 0.7,
+        /* スクラッチ概要モデル – Temperature */
+        "llm_scratch_synopsis_temperature": 0.3,
+        /* 感情値モデル – Temperature */
+        "llm_emo_values_temperature": 0.0,
+        /* 感情値フォールバックモデル – Temperature */
+        "llm_emo_values_fallback_temperature": 0.0,
+        /* 感情コンテキストモデル – Temperature */
+        "llm_emo_context_temperature": 0.7,
+
+        /* スクラッチパッドモデル – Top P */
+        "llm_scratchpad_top_p": null,
+        /* スクラッチ概要モデル – Top P */
+        "llm_scratch_synopsis_top_p": 0.90,
+        /* 感情値モデル – Top P */
+        "llm_emo_values_top_p": 0.95,
+        /* 感情値フォールバックモデル – Top P */
+        "llm_emo_values_fallback_top_p": 0.95,
+        /* 感情コンテキストモデル – Top P */
+        "llm_emo_context_top_p": null,
+
+        /* スクラッチパッドモデル – Top K */
+        "llm_scratchpad_top_k": 0,
+        /* スクラッチ概要モデル – Top K */
+        "llm_scratch_synopsis_top_k": 40,
+        /* 感情値モデル – Top K */
+        "llm_emo_values_top_k": 0,
+        /* 感情値フォールバックモデル – Top K */
+        "llm_emo_values_fallback_top_k": 0,
+        /* 感情コンテキストモデル – Top K */
+        "llm_emo_context_top_k": 0,
+
+        /* スクラッチパッドモデル – Repetition penalty */
+        "llm_scratchpad_repetition_penalty": 1.1,
+        /* スクラッチ概要モデル – Repetition penalty */
+        "llm_scratch_synopsis_repetition_penalty": 1.1,
+        /* 感情値モデル – Repetition penalty */
+        "llm_emo_values_repetition_penalty": 1.1,
+        /* 感情値フォールバックモデル – Repetition penalty */
+        "llm_emo_values_fallback_repetition_penalty": 1.1,
+        /* 感情コンテキストモデル – Repetition penalty */
+        "llm_emo_context_repetition_penalty": 1.1,
+
+        /* スクラッチパッドモデル – Max tokens */
+        "llm_scratchpad_max_tokens": 4000,
+        /* スクラッチ概要モデル – Max tokens */
+        "llm_scratch_synopsis_max_tokens": 500,
+        /* 感情値モデル – Max tokens */
+        "llm_emo_values_max_tokens": 200,
+        /* 感情値フォールバックモデル – Max tokens */
+        "llm_emo_values_fallback_max_tokens": 200,
+        /* 感情コンテキストモデル – Max tokens */
+        "llm_emo_context_max_tokens": 4000,
+
+        /* スクラッチパッドモデル – Stop sequences */
+        "llm_scratchpad_stop_sequences": [],
+        /* スクラッチ概要モデル – Stop sequences */
+        "llm_scratch_synopsis_stop_sequences": [],
+        /* 感情値モデル – Stop sequences */
+        "llm_emo_values_stop_sequences": [],
+        /* 感情値フォールバックモデル – Stop sequences */
+        "llm_emo_values_fallback_stop_sequences": [],
+        /* 感情コンテキストモデル – Stop sequences */
+        "llm_emo_context_stop_sequences": []
+    }
+}

@@ -1,0 +1,647 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["NetLocations", "LLM_Models", "Embedder_Models", "Model_Functions", "LLM_Generation_Hyperparameters"],
+    "properties": {
+        "NetLocations": {
+            "type": "object",
+            "required": [
+                "llm_chat_base_url", 
+                "llm_instruct_base_url", 
+                "llm_reasoning_base_url",
+                "llm_deep_context_base_url",
+                "embedder_base_url_jp", 
+                "embedder_base_url_eng",
+                "llm_scratchpad_base_url",
+                "llm_scratch_synopsis_base_url",
+                "llm_emo_values_base_url",
+                "llm_emo_values_fallback_base_url",
+                "llm_emo_context_base_url"
+            ],
+            "properties": {
+                "llm_chat_base_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Base URL for chat LLM endpoint"
+                },
+                "llm_instruct_base_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Base URL for instruction LLM endpoint"
+                },
+                "llm_reasoning_base_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Base URL for reasoning LLM endpoint"
+                },
+                "llm_deep_context_base_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Base URL for deep context LLM endpoint"
+                },
+                "embedder_base_url_jp": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Base URL for Japanese embedder endpoint"
+                },
+                "embedder_base_url_eng": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Base URL for English embedder endpoint"
+                },
+                "llm_scratchpad_base_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Base URL for scratchpad LLM endpoint"
+                },
+                "llm_scratch_synopsis_base_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Base URL for scratch synopsis LLM endpoint"
+                },
+                "llm_emo_values_base_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Base URL for emotional values LLM endpoint"
+                },
+                "llm_emo_values_fallback_base_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Base URL for emotional values fallback LLM endpoint"
+                },
+                "llm_emo_context_base_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Base URL for emotional context LLM endpoint"
+                }
+            }
+        },
+        "LLM_Models": {
+            "type": "object",
+            "required": [
+                "llm_chat_model", 
+                "llm_instruct_model",
+                "llm_reasoning_model",
+                "llm_deep_context_model",
+                "llm_scratchpad_model",
+                "llm_scratch_synopsis_model",
+                "llm_emo_values_model",
+                "llm_emo_values_fallback_model",
+                "llm_emo_context_model"
+            ],
+            "properties": {
+                "llm_chat_model": {
+                    "type": "string",
+                    "description": "Model identifier for chat LLM"
+                },
+                "llm_instruct_model": {
+                    "type": "string",
+                    "description": "Model identifier for instruction LLM"
+                },
+                "llm_reasoning_model": {
+                    "type": "string",
+                    "description": "Model identifier for reasoning LLM"
+                },
+                "llm_deep_context_model": {
+                    "type": "string",
+                    "description": "Model identifier for deep context processing LLM"
+                },
+                "llm_scratchpad_model": {
+                    "type": "string",
+                    "description": "Model identifier for scratchpad LLM"
+                },
+                "llm_scratch_synopsis_model": {
+                    "type": "string",
+                    "description": "Model identifier for scratch synopsis LLM"
+                },
+                "llm_emo_values_model": {
+                    "type": "string",
+                    "description": "Model identifier for emotional values LLM"
+                },
+                "llm_emo_values_fallback_model": {
+                    "type": "string",
+                    "description": "Model identifier for emotional values fallback LLM"
+                },
+                "llm_emo_context_model": {
+                    "type": "string",
+                    "description": "Model identifier for emotional context LLM"
+                }
+            }
+        },
+        "Embedder_Models": {
+            "type": "object",
+            "required": ["embedder_model_jp", "embedder_model_eng"],
+            "properties": {
+                "embedder_model_jp": {
+                    "type": "string",
+                    "description": "Model identifier for Japanese embedder"
+                },
+                "embedder_model_eng": {
+                    "type": "string",
+                    "description": "Model identifier for English embedder"
+                }
+            }
+        },
+        "Model_Functions": {
+            "type": "object",
+            "required": [
+                "llm_chat", 
+                "llm_instruct", 
+                "llm_reasoning",
+                "llm_deep_context",
+                "embedder_jp", 
+                "embedder_eng",
+                "llm_scratchpad",
+                "llm_scratch_synopsis",
+                "llm_emo_values",
+                "llm_emo_values_fallback",
+                "llm_emo_context"
+            ],
+            "properties": {
+                "llm_chat": {
+                    "type": "string",
+                    "description": "Function name for chat LLM"
+                },
+                "llm_instruct": {
+                    "type": "string",
+                    "description": "Function name for instruction LLM"
+                },
+                "llm_reasoning": {
+                    "type": "string",
+                    "description": "Function name for reasoning LLM"
+                },
+                "llm_deep_context": {
+                    "type": "string",
+                    "description": "Function name for deep context processing LLM"
+                },
+                "embedder_jp": {
+                    "type": "string",
+                    "description": "Function name for Japanese embedder"
+                },
+                "embedder_eng": {
+                    "type": "string",
+                    "description": "Function name for English embedder"
+                },
+                "llm_scratchpad": {
+                    "type": "string",
+                    "description": "Function name for scratchpad LLM"
+                },
+                "llm_scratch_synopsis": {
+                    "type": "string",
+                    "description": "Function name for scratch synopsis LLM"
+                },
+                "llm_emo_values": {
+                    "type": "string",
+                    "description": "Function name for emotional values LLM"
+                },
+                "llm_emo_values_fallback": {
+                    "type": "string",
+                    "description": "Function name for emotional values fallback LLM"
+                },
+                "llm_emo_context": {
+                    "type": "string",
+                    "description": "Function name for emotional context LLM"
+                }
+            }
+        },
+        "LLM_Generation_Hyperparameters": {
+            "type": "object",
+            "required": [
+                "llm_chat_beam_mode", "llm_instruct_beam_mode",
+                "llm_chat_beam_size", "llm_instruct_beam_size",
+                "llm_chat_temperature", "llm_instruct_temperature",
+                "llm_chat_top_p", "llm_instruct_top_p",
+                "llm_chat_top_k", "llm_instruct_top_k",
+                "llm_chat_repetition_penalty", "llm_instruct_repetition_penalty",
+                "llm_chat_max_tokens", "llm_instruct_max_tokens",
+                "llm_chat_stop_sequences", "llm_instruct_stop_sequences",
+                "llm_reasoning_beam_mode", "llm_deep_context_beam_mode",
+                "llm_reasoning_beam_size", "llm_deep_context_beam_size",
+                "llm_reasoning_temperature", "llm_deep_context_temperature",
+                "llm_reasoning_top_p", "llm_deep_context_top_p",
+                "llm_reasoning_top_k", "llm_deep_context_top_k",
+                "llm_reasoning_repetition_penalty", "llm_deep_context_repetition_penalty",
+                "llm_reasoning_max_tokens", "llm_deep_context_max_tokens",
+                "llm_reasoning_stop_sequences", "llm_deep_context_stop_sequences",
+                "llm_scratchpad_beam_mode", "llm_scratch_synopsis_beam_mode",
+                "llm_emo_values_beam_mode", "llm_emo_values_fallback_beam_mode",
+                "llm_emo_context_beam_mode",
+                
+                "llm_scratchpad_beam_size", "llm_scratch_synopsis_beam_size",
+                "llm_emo_values_beam_size", "llm_emo_values_fallback_beam_size",
+                "llm_emo_context_beam_size",
+                
+                "llm_scratchpad_temperature", "llm_scratch_synopsis_temperature",
+                "llm_emo_values_temperature", "llm_emo_values_fallback_temperature",
+                "llm_emo_context_temperature",
+                
+                "llm_scratchpad_top_p", "llm_scratch_synopsis_top_p",
+                "llm_emo_values_top_p", "llm_emo_values_fallback_top_p",
+                "llm_emo_context_top_p",
+                
+                "llm_scratchpad_top_k", "llm_scratch_synopsis_top_k",
+                "llm_emo_values_top_k", "llm_emo_values_fallback_top_k",
+                "llm_emo_context_top_k",
+                
+                "llm_scratchpad_repetition_penalty", "llm_scratch_synopsis_repetition_penalty",
+                "llm_emo_values_repetition_penalty", "llm_emo_values_fallback_repetition_penalty",
+                "llm_emo_context_repetition_penalty",
+                
+                "llm_scratchpad_max_tokens", "llm_scratch_synopsis_max_tokens",
+                "llm_emo_values_max_tokens", "llm_emo_values_fallback_max_tokens",
+                "llm_emo_context_max_tokens",
+                
+                "llm_scratchpad_stop_sequences", "llm_scratch_synopsis_stop_sequences",
+                "llm_emo_values_stop_sequences", "llm_emo_values_fallback_stop_sequences",
+                "llm_emo_context_stop_sequences"
+            ],
+            "properties": {
+                "llm_chat_beam_mode": {
+                    "type": "boolean",
+                    "description": "Enable/disable beam search mode for chat"
+                },
+                "llm_instruct_beam_mode": {
+                    "type": "boolean",
+                    "description": "Enable/disable beam search mode for instruction"
+                },
+                "llm_chat_beam_size": {
+                    "type": ["boolean", "integer"],
+                    "description": "Beam size for chat (if beam mode enabled)"
+                },
+                "llm_instruct_beam_size": {
+                    "type": ["boolean", "integer"],
+                    "description": "Beam size for instruction (if beam mode enabled)"
+                },
+                "llm_chat_temperature": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0,
+                    "description": "Temperature for chat generation"
+                },
+                "llm_instruct_temperature": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0,
+                    "description": "Temperature for instruction generation"
+                },
+                "llm_chat_top_p": {
+                    "type": ["number", "null"],
+                    "minimum": 0.0,
+                    "maximum": 1.0,
+                    "description": "Top-p (nucleus sampling) value for chat"
+                },
+                "llm_instruct_top_p": {
+                    "type": ["number", "null"],
+                    "minimum": 0.0,
+                    "maximum": 1.0,
+                    "description": "Top-p (nucleus sampling) value for instruction"
+                },
+                "llm_chat_top_k": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Top-k sampling value for chat"
+                },
+                "llm_instruct_top_k": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Top-k sampling value for instruction"
+                },
+                "llm_chat_repetition_penalty": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "description": "Repetition penalty for chat"
+                },
+                "llm_instruct_repetition_penalty": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "description": "Repetition penalty for instruction"
+                },
+                "llm_chat_max_tokens": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "description": "Maximum tokens to generate for chat"
+                },
+                "llm_instruct_max_tokens": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "description": "Maximum tokens to generate for instruction"
+                },
+                "llm_chat_stop_sequences": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Stop sequences for chat generation"
+                },
+                "llm_instruct_stop_sequences": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Stop sequences for instruction generation"
+                },
+                "llm_reasoning_beam_mode": {
+                    "type": "boolean",
+                    "description": "Enable/disable beam search mode for reasoning"
+                },
+                "llm_deep_context_beam_mode": {
+                    "type": "boolean",
+                    "description": "Enable/disable beam search mode for deep context processing"
+                },
+                "llm_reasoning_beam_size": {
+                    "type": ["boolean", "integer"],
+                    "description": "Beam size for reasoning (if beam mode enabled)"
+                },
+                "llm_deep_context_beam_size": {
+                    "type": ["boolean", "integer"],
+                    "description": "Beam size for deep context processing (if beam mode enabled)"
+                },
+                "llm_reasoning_temperature": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0,
+                    "description": "Temperature for reasoning generation"
+                },
+                "llm_deep_context_temperature": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0,
+                    "description": "Temperature for deep context processing generation"
+                },
+                "llm_reasoning_top_p": {
+                    "type": ["number", "null"],
+                    "minimum": 0.0,
+                    "maximum": 1.0,
+                    "description": "Top-p (nucleus sampling) value for reasoning"
+                },
+                "llm_deep_context_top_p": {
+                    "type": ["number", "null"],
+                    "minimum": 0.0,
+                    "maximum": 1.0,
+                    "description": "Top-p (nucleus sampling) value for deep context processing"
+                },
+                "llm_reasoning_top_k": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Top-k sampling value for reasoning"
+                },
+                "llm_deep_context_top_k": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Top-k sampling value for deep context processing"
+                },
+                "llm_reasoning_repetition_penalty": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "description": "Repetition penalty for reasoning"
+                },
+                "llm_deep_context_repetition_penalty": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "description": "Repetition penalty for deep context processing"
+                },
+                "llm_reasoning_max_tokens": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "description": "Maximum tokens to generate for reasoning"
+                },
+                "llm_deep_context_max_tokens": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "description": "Maximum tokens to generate for deep context processing"
+                },
+                "llm_reasoning_stop_sequences": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Stop sequences for reasoning generation"
+                },
+                "llm_deep_context_stop_sequences": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Stop sequences for deep context processing generation"
+                },
+                "llm_scratchpad_beam_mode": {
+                    "type": "boolean",
+                    "description": "Enable/disable beam search mode for scratchpad"
+                },
+                "llm_scratch_synopsis_beam_mode": {
+                    "type": "boolean",
+                    "description": "Enable/disable beam search mode for scratch synopsis"
+                },
+                "llm_emo_values_beam_mode": {
+                    "type": "boolean",
+                    "description": "Enable/disable beam search mode for emotional values"
+                },
+                "llm_emo_values_fallback_beam_mode": {
+                    "type": "boolean",
+                    "description": "Enable/disable beam search mode for emotional values fallback"
+                },
+                "llm_emo_context_beam_mode": {
+                    "type": "boolean",
+                    "description": "Enable/disable beam search mode for emotional context"
+                },
+                
+                "llm_scratchpad_beam_size": {
+                    "type": ["boolean", "integer"],
+                    "description": "Beam size for scratchpad (if beam mode enabled)"
+                },
+                "llm_scratch_synopsis_beam_size": {
+                    "type": ["boolean", "integer"],
+                    "description": "Beam size for scratch synopsis (if beam mode enabled)"
+                },
+                "llm_emo_values_beam_size": {
+                    "type": ["boolean", "integer"],
+                    "description": "Beam size for emotional values (if beam mode enabled)"
+                },
+                "llm_emo_values_fallback_beam_size": {
+                    "type": ["boolean", "integer"],
+                    "description": "Beam size for emotional values fallback (if beam mode enabled)"
+                },
+                "llm_emo_context_beam_size": {
+                    "type": ["boolean", "integer"],
+                    "description": "Beam size for emotional context (if beam mode enabled)"
+                },
+                
+                "llm_scratchpad_temperature": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0,
+                    "description": "Temperature for scratchpad generation"
+                },
+                "llm_scratch_synopsis_temperature": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0,
+                    "description": "Temperature for scratch synopsis generation"
+                },
+                "llm_emo_values_temperature": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0,
+                    "description": "Temperature for emotional values generation"
+                },
+                "llm_emo_values_fallback_temperature": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0,
+                    "description": "Temperature for emotional values fallback generation"
+                },
+                "llm_emo_context_temperature": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 1.0,
+                    "description": "Temperature for emotional context generation"
+                },
+                
+                "llm_scratchpad_top_p": {
+                    "type": ["number", "null"],
+                    "minimum": 0.0,
+                    "maximum": 1.0,
+                    "description": "Top-p (nucleus sampling) value for scratchpad"
+                },
+                "llm_scratch_synopsis_top_p": {
+                    "type": ["number", "null"],
+                    "minimum": 0.0,
+                    "maximum": 1.0,
+                    "description": "Top-p (nucleus sampling) value for scratch synopsis"
+                },
+                "llm_emo_values_top_p": {
+                    "type": ["number", "null"],
+                    "minimum": 0.0,
+                    "maximum": 1.0,
+                    "description": "Top-p (nucleus sampling) value for emotional values"
+                },
+                "llm_emo_values_fallback_top_p": {
+                    "type": ["number", "null"],
+                    "minimum": 0.0,
+                    "maximum": 1.0,
+                    "description": "Top-p (nucleus sampling) value for emotional values fallback"
+                },
+                "llm_emo_context_top_p": {
+                    "type": ["number", "null"],
+                    "minimum": 0.0,
+                    "maximum": 1.0,
+                    "description": "Top-p (nucleus sampling) value for emotional context"
+                },
+                
+                "llm_scratchpad_top_k": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Top-k sampling value for scratchpad"
+                },
+                "llm_scratch_synopsis_top_k": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Top-k sampling value for scratch synopsis"
+                },
+                "llm_emo_values_top_k": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Top-k sampling value for emotional values"
+                },
+                "llm_emo_values_fallback_top_k": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Top-k sampling value for emotional values fallback"
+                },
+                "llm_emo_context_top_k": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "description": "Top-k sampling value for emotional context"
+                },
+                
+                "llm_scratchpad_repetition_penalty": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "description": "Repetition penalty for scratchpad"
+                },
+                "llm_scratch_synopsis_repetition_penalty": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "description": "Repetition penalty for scratch synopsis"
+                },
+                "llm_emo_values_repetition_penalty": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "description": "Repetition penalty for emotional values"
+                },
+                "llm_emo_values_fallback_repetition_penalty": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "description": "Repetition penalty for emotional values fallback"
+                },
+                "llm_emo_context_repetition_penalty": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "description": "Repetition penalty for emotional context"
+                },
+                
+                "llm_scratchpad_max_tokens": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "description": "Maximum tokens to generate for scratchpad"
+                },
+                "llm_scratch_synopsis_max_tokens": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "description": "Maximum tokens to generate for scratch synopsis"
+                },
+                "llm_emo_values_max_tokens": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "description": "Maximum tokens to generate for emotional values"
+                },
+                "llm_emo_values_fallback_max_tokens": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "description": "Maximum tokens to generate for emotional values fallback"
+                },
+                "llm_emo_context_max_tokens": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "description": "Maximum tokens to generate for emotional context"
+                },
+                
+                "llm_scratchpad_stop_sequences": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Stop sequences for scratchpad generation"
+                },
+                "llm_scratch_synopsis_stop_sequences": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Stop sequences for scratch synopsis generation"
+                },
+                "llm_emo_values_stop_sequences": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Stop sequences for emotional values generation"
+                },
+                "llm_emo_values_fallback_stop_sequences": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Stop sequences for emotional values fallback generation"
+                },
+                "llm_emo_context_stop_sequences": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Stop sequences for emotional context generation"
+                }
+            }
+        }
+    }
+} 

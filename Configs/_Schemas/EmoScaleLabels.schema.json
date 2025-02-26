@@ -1,0 +1,117 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "required": ["Intensity", "Valence", "Arousal", "PromptGenLang"],
+    "properties": {
+        "Intensity": {
+            "type": "object",
+            "required": ["Definition", "ScaleDesc", "Scale", "Labels_Ja", "Labels_En"],
+            "properties": {
+                "Definition": {
+                    "type": "string"
+                },
+                "ScaleDesc": {
+                    "type": "string"
+                },
+                "Scale": {
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "Labels_Ja": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Labels_En": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+
+            }
+        },
+        "Valence": {
+            "type": "object",
+            "required": ["Definition", "ScaleDesc", "Scale", "Labels_Ja", "Labels_En"],
+            "properties": {
+                "Definition": {
+                    "type": "string"
+                },
+                "ScaleDesc": {
+                    "type": "string"
+                },
+                "Scale": {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "number"
+                        }
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                },
+                "Labels_Ja": {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                },
+                "Labels_En": {
+                    "type": "array",
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                }
+            }
+        },
+        "Arousal": {
+            "type": "object",
+            "required": ["Definition", "ScaleDesc", "Scale", "Labels_Ja", "Labels_En"],
+            "properties": {
+                "Definition": {
+                    "type": "string"
+                },
+                "ScaleDesc": {
+                    "type": "string"
+                },
+                "Scale": {
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "Labels_Ja": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "Labels_En": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "PromptGenLang": {
+            "type": "string",
+            "required": ["PromptGenLang"]
+        }
+    }
+}
