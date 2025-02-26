@@ -33,15 +33,20 @@ It is a very sparse tensor, with the majority of the values at any given point b
 ## 5. The Tensor<a name="5-the-tensor"></a>
 ### The Tensor's Structure<a name="5a-the-tensor-structure"></a>
 The tensor is a 5D tensor, with the following dimensions:
-5. The Transient Dimension
+
+__5. The Transient Dimension__
   This dimension roughly represents the time-frame of the conversation, with each index being a transient or "slice" of the conversation at a given point in time. It does not have a 1-to-1 correspondence to the actual time-frame of the conversation, but rather is a representation of the conversation's progress as it flows through changes in emotion. This could be every message for short messages, or every chunk of coherent emotion for longer messages.
-4. The Emoter Dimension
+
+__4. The Emoter Dimension__
   This dimension represents the frame of reference for the emotional state of the AI's persona or any other participant's inferred emotional state.
-3. The Direction Dimension
+
+__3. The Direction Dimension__
   This dimension represents the directionality of the emotional state, that is, the emotional state of the AI's persona as directed to any other participant, or the emotional state of any other participant as directed to the AI's persona or any other participant. It forms a complex mesh of emotional connections between all participants.
-2. The Emotion Dimension
+
+__2. The Emotion Dimension__
   This dimension represents the specific emotion family (currently using the Plutchik's Wheel of Emotions model, e.g. joy, trust, sadness, etc., although this can be changed later after further research) that the emotional state is directed towards.
-1. The Emotional State Dimension
+
+__1. The Emotional State Dimension__
   This dimension represents the intensity, valence, and arousal of the given emotion family, that is, the strength of the emotion, how much it is positive or negative, and how elivated it's activation-level is (normally this would be a physiological arousal).
 
 ### The Tensor's Context<a name="5b-the-tensor-context"></a>
