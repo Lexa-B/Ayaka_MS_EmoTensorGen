@@ -1,0 +1,330 @@
+<EmoList ModelName="Plutchik" ModelDesc="Plutchik's Emotion List">
+    <ModelDesc Lang="Ja">
+        このリストは、ロバート・プルチックの理論に基づく感情ファミリーを元に、感情をさらに強度（I）、情動価（V）、覚醒度（A）、コンテキスト（C）の各次元に分類しています。
+    </ModelDesc>
+    <ModelDesc Lang="En">
+        This list is based on the emotion families from Robert Plutchik's theory and then furthercategorizes emotions according to the dimensions of Intensity (I), Valence (V), Arousal (A), and Context (C).
+    </ModelDesc>
+    <EvaluationMetrics>
+        <Metric>
+            <MetricName Lang="Ja">強度</MetricName>
+            <MetricName Lang="En">Intensity</MetricName>
+            <MetricDesc Lang="Ja">
+                この指標は、感情がどの程度強くまたは弱く感じられるかを示し、軽度な感情から非常に強烈な感情までの幅を表現します。
+            </MetricDesc>
+            <MetricDesc Lang="En">
+                This metric is used to express how strong or weak an emotion is perceived. It indicates the range of how strongly each emotion is felt.
+            </MetricDesc>
+        </Metric>
+        <Metric>
+            <MetricName Lang="Ja">情動価</MetricName>
+            <MetricName Lang="En">Valence</MetricName>
+            <MetricDesc Lang="Ja">
+                この指標は、感情の基本的な正負性を表し、感情が持つ肯定的または否定的な性質を示します。
+            </MetricDesc>
+            <MetricDesc Lang="En">
+                This metric represents the inherent positivity or negativity of an emotion. It indicates the positive or negative nature of an emotion.
+            </MetricDesc>
+        </Metric>
+        <Metric>
+            <MetricName Lang="Ja">覚醒度</MetricName>
+            <MetricName Lang="En">Arousal</MetricName>
+            <MetricDesc Lang="Ja">
+                この指標は、感情に伴う生理的または心理的な覚醒レベルを表し、興奮や警戒の度合いを示します。
+            </MetricDesc>
+            <MetricDesc Lang="En">
+                This metric describes the level of physiological or psychological activation associated with the emotion. It indicates the degree of excitement or alertness associated with an emotion.
+            </MetricDesc>
+        </Metric>
+        <Metric>
+            <MetricName Lang="Ja">コンテキスト</MetricName>
+            <MetricName Lang="En">Context</MetricName>
+            <MetricDesc Lang="Ja">
+                この指標は、感情が発生する状況や背景を示し、感情の現れる場面やその意味合いに関する補足情報を提供します。
+            </MetricDesc>
+            <MetricDesc Lang="En">
+                This metric is used to express the context of an emotion. It provides additional information about the situation or setting in which an emotion appears, as well as its background and meaning.
+            </MetricDesc>
+        </Metric>
+    </EvaluationMetrics>
+    <ListOfEmotionFamilies>
+        <description Lang="Ja">
+            以下は、各感情の概要と、強度（I）、バリアンス（V）、興奮度（A）、コンテキスト（C）の関係を簡潔に説明したものです。
+        </description>
+        <description Lang="En">
+            Below, each emotion is briefly described along with its relationship to the dimensions of Intensity (I), Valence (V), Arousal (A), and Context (C).
+        </description>
+        <EmotionFamily Name-Ja="喜び" Name-En="Joy">
+            <Definition Lang="Ja">
+                喜びは、望ましい出来事や達成感により引き起こされ、個人に活力と幸福感をもたらす積極的な情動です。
+            </Definition>
+            <Definition Lang="En">
+                A positively-valenced emotion typically associated with pleasure, contentment, or delight.
+            </Definition>
+            <Measures>
+                <Intensity Lang="Ja">
+                    軽い喜びから非常に溢れる歓喜まで、感情の強度は幅広く変動します。
+                </Intensity> 
+                <Intensity Lang="En">
+                    Can range from mild pleasure to exuberant joy.
+                </Intensity>
+                <Valence Lang="Ja">
+                    常に正の評価がなされる傾向にあります。
+                </Valence> 
+                <Valence Lang="En">
+                    Is almost always positive.
+                </Valence> 
+                <Arousal Lang="Ja">
+                    落ち着いた満足感から高揚感に至るまで、興奮度は状況によって大きく変わります。
+                </Arousal> 
+                <Arousal Lang="En">
+                    Can vary widely (calm contentment vs. excited elation).
+                </Arousal> 
+                <Context Lang="Ja">
+                    個人的な達成感と対人関係での結び付きなど、状況によりその意味合いが異なります。
+                </Context>
+                <Context Lang="En">
+                    Helps differentiate interpersonal joy (e.g., bonding) vs. personal accomplishment.
+                </Context>
+            </Measures>
+        </EmotionFamily> 
+        <EmotionFamily Name-Ja="信頼" Name-En="Trust"> 
+            <Definition Lang="Ja">
+                信頼は、他者との関係において安心感と安全性を感じ、協力や社会的結束を促進する感情です。
+            </Definition>
+            <Definition Lang="En">
+                A positively-valenced emotion reflecting belief in the reliability, integrity, or strength of someone or something.
+            </Definition>
+            <Measures>
+                <Intensity Lang="Ja">
+                    微かな信頼感から深い安心感まで、感情の強度は多様です。
+                </Intensity> 
+                <Intensity Lang="En">
+                    Ranges from a subtle sense of confidence to deep-seated assurance.
+                </Intensity>
+                <Valence Lang="Ja">
+                    基本的に正の評価が行われます。
+                </Valence> 
+                <Valence Lang="En">
+                    Primarily positive.
+                </Valence>
+                <Arousal Lang="Ja">
+                    状況に応じて、信頼が深まる際には興奮度が上昇することもあります。
+                </Arousal> 
+                <Arousal Lang="En">
+                    Generally moderate, with potential for heightened arousal in situations of commitment.
+                </Arousal>
+                <Context Lang="Ja">
+                    過去の経験や評判、対象の一貫性により文脈が形作られます。
+                </Context>
+                <Context Lang="En">
+                    Influenced by previous experiences, reputation, and perceived consistency.
+                </Context>
+            </Measures>
+        </EmotionFamily>
+        <EmotionFamily Name-Ja="恐怖" Name-En="Fear">
+            <Definition Lang="Ja">
+                恐怖は、潜在的な危険や脅威に直面したときに生じ、迅速な回避行動や防衛反応を引き起こす自己保護の情動です。
+            </Definition>
+            <Definition Lang="En">
+                A negatively-valenced emotion triggered by perceived threats, danger, or uncertainty.
+            </Definition>
+            <Measures>
+                <Intensity Lang="Ja">
+                    軽度の不安から圧倒的な恐怖まで、その強度は状況によって大きく異なります。
+                </Intensity> 
+                <Intensity Lang="En">
+                    Can range from mild anxiety to overwhelming terror.
+                </Intensity>
+                <Valence Lang="Ja">
+                    一貫して否定的な評価がなされます。
+                </Valence> 
+                <Valence Lang="En">
+                    Negative.
+                </Valence>
+                <Arousal Lang="Ja">
+                    通常、闘争・逃走反応を促すほど高い興奮度を示します。
+                </Arousal> 
+                <Arousal Lang="En">
+                    Typically high, activating a fight-or-flight response.
+                </Arousal>
+                <Context Lang="Ja">
+                    潜在的な危険やリスクの存在が文脈を決定づけます。
+                </Context>
+                <Context Lang="En">
+                    Contextual cues of potential harm or risk play a key role.
+                </Context>
+            </Measures>
+        </EmotionFamily>
+        <EmotionFamily Name-Ja="驚き" Name-En="Surprise">
+            <Definition Lang="Ja">
+                驚きは、予測外の出来事に対して瞬時に反応し、環境の再評価や認知的適応を促す感情です。
+            </Definition>
+            <Definition Lang="En">
+                An emotion elicited by unexpected events or sudden changes in the environment.
+            </Definition>
+            <Measures>
+                <Intensity Lang="Ja">
+                    軽い驚きから強いショックまで、その強度は幅広く変化します。
+                </Intensity> 
+                <Intensity Lang="En">
+                    Varies from a slight startle to profound shock.
+                </Intensity>
+                <Valence Lang="Ja">
+                    出来事の性質により、正、負、または中立の評価が可能です。
+                </Valence> 
+                <Valence Lang="En">
+                    Can be neutral, positive, or negative depending on the nature of the surprise.
+                </Valence>
+                <Arousal Lang="Ja">
+                    瞬間的に高い興奮度を示し、その後急速に低下する傾向があります。
+                </Arousal> 
+                <Arousal Lang="En">
+                    Generally high in the immediate moment, then subsides quickly.
+                </Arousal>
+                <Context Lang="Ja">
+                    予測と異なる出来事が、状況の正負を明確にする文脈要因となります。
+                </Context>
+                <Context Lang="En">
+                    Arises from a deviation from expected norms, with context clarifying its positive or negative slant.
+                </Context>
+            </Measures>
+        </EmotionFamily>
+        <EmotionFamily Name-Ja="悲しみ" Name-En="Sadness">
+            <Definition Lang="Ja">
+                悲しみは、喪失や失望に伴う内面的な痛みを反映し、自己の再評価や心の癒しへのプロセスを促す情動です。
+            </Definition>
+            <Definition Lang="En">
+                A negatively-valenced emotion associated with loss, disappointment, or despair.
+            </Definition>
+            <Measures>
+                <Intensity Lang="Ja">
+                    軽い憂鬱感から深い悲嘆に至るまで、感情の強度は多様です。
+                </Intensity> 
+                <Intensity Lang="En">
+                    Ranges from mild melancholy to deep, consuming sorrow.
+                </Intensity>
+                <Valence Lang="Ja">
+                    一貫して否定的な評価が行われます。
+                </Valence> 
+                <Valence Lang="En">
+                    Negative.
+                </Valence>
+                <Arousal Lang="Ja">
+                    状況により、低い場合は無気力となり、場合によっては動揺とともに高まることもあります。
+                </Arousal> 
+                <Arousal Lang="En">
+                    Can be low, leading to lethargy, or occasionally higher when accompanied by agitation.
+                </Arousal>
+                <Context Lang="Ja">
+                    喪失、失望、または分離の経験が、悲しみの文脈を形作ります。
+                </Context>
+                <Context Lang="En">
+                    Often triggered by experiences of loss, failure, or separation.
+                </Context>
+            </Measures>
+        </EmotionFamily>
+        <EmotionFamily Name-Ja="嫌悪" Name-En="Disgust">
+            <Definition Lang="Ja">
+                嫌悪は、不快な刺激や状況に対して本能的な拒絶反応を示し、身体的および心理的な自己保護の役割を果たす感情です。
+            </Definition>
+            <Definition Lang="En">
+                A negatively-valenced emotion that arises from repulsion towards certain stimuli, whether physical or moral.
+            </Definition>
+            <Measures>
+                <Intensity Lang="Ja">
+                    微妙な嫌悪感から激しい嫌悪反応まで、その強度は幅広く変化します。
+                </Intensity> 
+                <Intensity Lang="En">
+                    Can range from mild distaste to intense revulsion.
+                </Intensity>
+                <Valence Lang="Ja">
+                    一貫して否定的な評価がなされます。
+                </Valence> 
+                <Valence Lang="En">
+                    Negative.
+                </Valence>
+                <Arousal Lang="Ja">
+                    即時の回避反応を引き起こすほど高い興奮度を示すことが一般的です。
+                </Arousal> 
+                <Arousal Lang="En">
+                    Typically high, prompting immediate avoidance.
+                </Arousal>
+                <Context Lang="Ja">
+                    感覚的な刺激および文化的・道徳的基準が、嫌悪の文脈を決定づけます。
+                </Context>
+                <Context Lang="En">
+                    Influenced by sensory inputs and cultural or moral standards.
+                </Context>
+            </Measures>
+        </EmotionFamily>
+        <EmotionFamily Name-Ja="怒り" Name-En="Anger">
+            <Definition Lang="Ja">
+                怒りは、不正や脅威に対する反発として現れ、状況の変革や自己防衛のためのエネルギーを生み出す情動です。
+            </Definition>
+            <Definition Lang="En">
+                A negatively-valenced emotion characterized by feelings of displeasure, hostility, or antagonism.
+            </Definition>
+            <Measures>
+                <Intensity Lang="Ja">
+                    軽い苛立ちから爆発的な激怒に至るまで、感情の強度はさまざまです。
+                </Intensity> 
+                <Intensity Lang="En">
+                    Ranges from mild irritation to explosive rage.
+                </Intensity>
+                <Valence Lang="Ja">
+                    一貫して否定的な評価がなされます。
+                </Valence> 
+                <Valence Lang="En">
+                    Negative.
+                </Valence>
+                <Arousal Lang="Ja">
+                    高い興奮度を示し、対抗行動や変化を促進します。
+                </Arousal> 
+                <Arousal Lang="En">
+                    Often high, mobilizing energy for confrontation or change.
+                </Arousal>
+                <Context Lang="Ja">
+                    不正、フラストレーション、個人の境界侵害といった状況が、怒りの文脈を形成します。
+                </Context>
+                <Context Lang="En">
+                    Typically arises in response to perceived injustice, frustration, or violation of personal boundaries.
+                </Context>
+            </Measures>
+        </EmotionFamily>
+        <EmotionFamily Name-Ja="期待" Name-En="Anticipation">
+            <Definition Lang="Ja">
+                期待は、未来に起こる可能性のある出来事に対して希望や警戒が入り混じる状態で、次の行動への準備や計画を促す感情です。
+            </Definition>
+            <Definition Lang="En">
+                An emotion characterized by a forward-looking state of eagerness, curiosity, or anxiety about future events.
+            </Definition>
+            <Measures>
+                <Intensity Lang="Ja">
+                    軽い期待感から強い切望や不安に至るまで、感情の強度は状況によって変動します。
+                </Intensity> 
+                <Intensity Lang="En">
+                    Varies from mild expectancy to heightened eagerness or apprehension.
+                </Intensity>
+                <Valence Lang="Ja">
+                    望む結果であれば正の評価となり、不安の場合は否定的になることもあります。
+                </Valence> 
+                <Valence Lang="En">
+                    Can be positive when looking forward to a desired outcome, or negative if associated with anxiety.
+                </Valence>
+                <Arousal Lang="Ja">
+                    概ね中程度ですが、予期される出来事に近づくにつれて高まる傾向があります。
+                </Arousal> 
+                <Arousal Lang="En">
+                    Generally moderate, with potential to increase as the anticipated event nears.
+                </Arousal>
+                <Context Lang="Ja">
+                    過去の経験、現在の感情状態、そして未来の不確実性が、その文脈を形作ります。
+                </Context>
+                <Context Lang="En">
+                    Shaped by previous experiences, current mood, and the inherent uncertainty of future events.
+                </Context>
+            </Measures>
+        </EmotionFamily>
+    </ListOfEmotionFamilies>
+</EmoList>
