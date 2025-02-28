@@ -9,4 +9,4 @@ lxml==5.3.1 # For the XML parser
 base32-crockford==0.3.0 # For the base32 encoder/decoder
 
 # Custom
-git+https://github.com/Lexa-B/AyakaUtils.git@v0.0.0 # For the custom functions
+git+https://github.com/Lexa-B/AyakaUtils.git@v0.0.1 # For the custom functions
