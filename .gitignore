@@ -10,6 +10,7 @@ DLog*.zip
 DLog.*zip
 DLog.*.log.zip
 DLogging/*
+Logs/*
 
 # Docker
 *.dockerignore

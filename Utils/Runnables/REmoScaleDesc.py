@@ -1,16 +1,5 @@
-# Python
-import sys
-import os
-import ast
-
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 # LangChain
 from langchain.schema.runnable import RunnableLambda
-
-EmoDescFile = "./Configs/EmoList_Plutchik.xml"
-
-EmoScaleLabelsDefs = ast.literal_eval(open("./Configs/EmoScaleLabels.jsonc", "r").read())
 
 
 ################################################################################
@@ -164,6 +153,3 @@ def REmoScaleDesc(EmoScaleLabels, PromptGenLang) -> RunnableLambda:
         EmoScaleLabels=EmoScaleLabels,
         PromptGenLang=PromptGenLang
     ))
-
-output = BuildReadableEmoScaleDesc(EmoScaleLabelsDefs, "Ja")
-print(output)

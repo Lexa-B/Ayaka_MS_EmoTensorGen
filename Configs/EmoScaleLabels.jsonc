@@ -9,14 +9,14 @@
     },
     "Valence": {
         "Definition": "Emotional valence describes the inherent positivity or negativity of an emotion, independent of its strength or activation; for example, in the surprise family, a delightful surprise (positive valence) contrasts with an alarming surprise (negative valence) even when both are experienced with the same intensity and arousal.",
-        "ScaleDesc": "Sigmoid scale, -1 is the most negative possible, 0 is neutral, and 1 is the most positive possible.",
+        "ScaleDesc": "Sigmoid scale, values approaching -1 are so low that they are the most negative imaginable emotion, 0 is neutral, and values approaching 1 are so high that the person is impossibly ecstatic.",
         "Scale": [[-0.60, -0.30], [0.30, 0.60]],
-        "Labels_En": [["Very Negative", "Negative"], ["Positive", "Very Positive"]],
-        "Labels_Ja": [["非常にネガティブな", "ネガティブな"], ["ポジティブな", "非常にポジティブな"]]
+        "Labels_Ja": [["非常にネガティブな", "ネガティブな"], ["ポジティブな", "非常にポジティブな"]],
+        "Labels_En": [["Very Negative", "Negative"], ["Positive", "Very Positive"]]
     },
     "Arousal": {
         "Definition": "Arousal pertains to the level of physiological and psychological activation accompanying an emotion, ranging from calm to highly energized states. For example, within the joy family, a serene sense of contentment represents a low-arousal form of joy, while exuberance or elation represents a high-arousal form, both maintaining the same positive valence and intensity. This variation reflects only the degree of energetic activation without altering the emotion's inherent character.",
-        "ScaleDesc": "Logistic scale, 0 is neutral, and 1 is the most positive possible. Values close to 1 are so high that the person is hysterical.",
+        "ScaleDesc": "Logistic scale, 0 is completely inactive, and asymptoting on 1 is the most positive possible. Values approaching 1 are so high that the person is hyperbolically charged.",
         "Scale": [0.00, 0.40, 0.60, 0.80],
         "Labels_Ja": ["低い", "中程度の", "高い", "非常に高い"],
         "Labels_En": ["Low", "Moderate", "High", "Very High"]
