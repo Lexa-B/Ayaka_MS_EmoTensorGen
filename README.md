@@ -38,6 +38,7 @@ There are two main components to this microservice:
 ### The Service's Overview<a name="2a-the-service-overview"></a>
 * The LangServe endpoints (not yet implemented) will be in EmoTensorGen.py
 * The actual service responsible for generating and appending to the EmoTensor is in EmoTensorGen_Service.py
+* _Caveat Emptor: Very little time has ben made as of yet into the poly-user use of the code... it likely will still be rife with bugs until it is properly fleshed out_
 
 ### The Service's Core Functionalities<a name="2b-the-service-core-functionalities"></a>
 
