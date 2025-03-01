@@ -35,6 +35,7 @@ There are two main components to this microservice:
   - [b. The Format's Generation](#6b-the-format-generation)
 
 ![image](https://github.com/user-attachments/assets/34799631-0291-4576-aa69-613fd60ac8f8)
+*This is an example plot of several emotions' states after a moderate-length pleasant conversation*
 
 ## 2. The Service Basics<a name="2-the-service-basics"></a>
 ### The Service's Overview<a name="2a-the-service-overview"></a>
