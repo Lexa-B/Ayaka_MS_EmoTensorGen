@@ -3,7 +3,7 @@ from typing import List
 import itertools
 
 # Custom
-from ayaka_utils.Classes.EmoTensorModels import EmoTensorFull_CTXD
+from ayaka_models_emotensor.EmoTensorModels import EmoTensorFull_CTXD, EmoTensorVersion
 from Utils.Defs.EmoDesc_FromXML_ToDict import EmoDesc_FromXML_ToDict
 
 def TensorInit_SlicedContextualized(ConversationUsers: List[dict], EmoDescFile: str):
@@ -37,7 +37,7 @@ def TensorInit_SlicedContextualized(ConversationUsers: List[dict], EmoDescFile: 
 
     
     NewTensor = EmoTensorFull_CTXD(
-        version="v0.0.1-EmoTensor Sliced Contextualized",
+        version=EmoTensorVersion,
         order_1_attributes=O1_Attributes,
         order_2_emotions=O2_Emotions,
         order_3_target=O3_Target,

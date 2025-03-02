@@ -3,7 +3,6 @@ from typing import List
 import os
 import re
 import ast
-
 # LangChain
 from langchain.schema.runnable import RunnableLambda, RunnableBranch
 from langchain.prompts import ChatPromptTemplate
@@ -15,11 +14,12 @@ from langchain.schema.runnable.passthrough import RunnableAssign
 # Other
 import base32_crockford
 import dropbox
+from datetime import datetime
 
 # Custom
 from ayaka_utils.Defs.model_configurator import get_configured_model
 from ayaka_utils.Defs.DbxConnector import DbxFIO
-from ayaka_utils.Classes.EmoTensorModels import EmoTensorFull_CTXD, EmoTensor4DSlice_CTXD, EmoTensor3DSlice_CTXD, EmoTensor2DSlice_CTXD, EmoTensor1DSlice_CTXD
+from ayaka_models_emotensor.EmoTensorModels import EmoTensorFull_CTXD, EmoTensor4DSlice_CTXD, EmoTensor3DSlice_CTXD, EmoTensor2DSlice_CTXD, EmoTensor1DSlice_CTXD
 from Utils.Defs.TensorInit_SlicedContextualized import TensorInit_SlicedContextualized
 #from ayaka_utils.Defs.pprint import pprint  
 
@@ -649,6 +649,7 @@ def ProcessEmotionalTransient(
             # Read the file from Dropbox
             try:
                 json_data_in = DbxFIO(DbxPath=EmoTensorContextualizedFilePath, mode="read", type="json")
+                EmoTensorFull = EmoTensorFull_CTXD.model_validate_json(json_data_in)
             except dropbox.exceptions.ApiError as e:
                 if (isinstance(e.error, dropbox.files.DownloadError) and 
                     e.error.is_path() and 
@@ -665,7 +666,6 @@ def ProcessEmotionalTransient(
             os.makedirs(os.path.dirname(EmoTensorContextualizedFilePath), exist_ok=True)
             with open(EmoTensorContextualizedFilePath) as f:
                 json_data_in = f.read()
-
             EmoTensorFull = EmoTensorFull_CTXD.model_validate_json(json_data_in)
 
     ## If TestMode is True, create a new empty EmoTensorFull object
@@ -750,6 +750,7 @@ def ProcessEmotionalTransient(
 
     # Build the final transient for saving (now in file order)
     NewEmoTensor4DSlice = EmoTensor4DSlice_CTXD(
+        timestamp=datetime.now().isoformat(),
         message=CurrentEmoTensor4DSliceInput["message"],
         speaker_user=CurrentEmoTensor4DSliceInput["speaker_user"],
         emotional_context=GenEmoContext({
@@ -764,19 +765,18 @@ def ProcessEmotionalTransient(
     # Increment order_5_transients only once.
     # ToDo: get this from the DB
     if len(EmoTensorFull.order_5_transients) == 0:
-        next_transient = "c_0_0_0" # If there are no transients, start at 0
+        next_transient = f"c_0_0_0+{datetime.now().isoformat()}" # If there are no transients, start at 0
     else:
         last_transient = EmoTensorFull.order_5_transients[-1]
         last_segment = last_transient.split('_')[-1]
         try:
             last_number = base32_crockford.decode(last_segment)
             next_number = last_number + 1
-            next_transient = f"c_0_0_{base32_crockford.encode(next_number)}"
+            next_transient = f"c_0_0_{base32_crockford.encode(next_number)}+{datetime.now().isoformat()}"
         except ValueError:
             # If we can't decode the last segment, start a new sequence
-            next_transient = "c_0_0_0"
+            next_transient = f"c_0_0_0+{datetime.now().isoformat()}"
     EmoTensorFull.order_5_transients.append(next_transient)
-
     # Append the new transient to the conversation history.
     EmoTensorFull.transients.append(NewEmoTensor4DSlice)
 

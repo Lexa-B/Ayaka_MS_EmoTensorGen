@@ -7,6 +7,8 @@ dotenv==0.9.* # For the environment variables
 dropbox==12.0.2 # For the Dropbox API to get the EmoTensorContextualizedFile
 lxml==5.3.1 # For the XML parser
 base32-crockford==0.3.0 # For the base32 encoder/decoder
+datetime==5.5
 
 # Custom
-git+https://github.com/Lexa-B/AyakaUtils.git@v0.0.4 # For the custom functions
+git+https://github.com/Lexa-B/Ayaka_Model_EmoTensor.git@v0.0.2 # For the EmoTensor model
+git+https://github.com/Lexa-B/AyakaUtils.git@v0.0.5 # For the custom functions
